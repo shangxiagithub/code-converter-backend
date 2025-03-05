@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>转换历史记录</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <div class="header-bar">
+            <a href="/" class="btn">返回转换器</a>
+            <h1>代码转换历史记录</h1>
+        </div>
+
+        <table class="history-table">
+            <thead>
+                <tr>
+                    <th>源代码</th>
+                    <th>转换结果</th>
+                    <th>转换时间</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in records %}
+                <tr>
+                    <td class="code-cell"><pre>{{ record.source_code }}</pre></td>
+                    <td class="code-cell"><pre>{{ record.converted_code }}</pre></td>
+                    <td>{{ record.conversion_date.strftime('%Y-%m-%d %H:%M') }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
