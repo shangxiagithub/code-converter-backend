@@ -1,3 +1,4 @@
+from flask_cors import CORS
 from flask import Flask
 from config import Config
 from routes.converter import bp as converter_bp
@@ -6,6 +7,8 @@ from routes.history import bp as history_bp
 
 def create_app(config_class=Config):
     app = Flask(__name__)
+    CORS(app)  # 添加这行
+    # CORS(app, resources={r"/api/*": {"origins": "*"}})
     app.config.from_object(config_class)
 
     # # 初始化数据库

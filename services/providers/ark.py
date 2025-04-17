@@ -8,7 +8,8 @@ from services.llm_service import LLMService
 
 class ArkService(LLMService):
     def __init__(self, config):
-        self.api_url = "https://ark.cn-beijing.volces.com/api/v3"
+        # self.api_url = "https://ark.cn-beijing.volces.com/api/v3"
+        self.api_url = "127.0.0.1:11434"
         self.client = Ark(api_key=config['ARK_API_KEY'])
 
     def convert_code(self, source_code: str, target_lang: str) -> str:

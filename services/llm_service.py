@@ -6,7 +6,7 @@ class LLMService(ABC):
     def convert_code(self, source_code: str, target_lang: str) -> str:
         pass
 
-    @abstractmethod
+    # @abstractmethod
     def detect_language(self, source_code: str) -> str:
         pass
 

@@ -1,5 +1,5 @@
-Flask>=1.0
-mysql-connector-python~=9.2.0
-requests~=2.32.3
-python-dotenv~=1.0.1
-openai~=1.65.2
+Flask==3.1.0
+flask-cors==3.0.10
+mysql_connector_repackaged==0.3.1
+Requests==2.32.3
+volcengine_python_sdk==1.0.126
